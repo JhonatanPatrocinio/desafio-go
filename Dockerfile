@@ -4,7 +4,8 @@ WORKDIR /go/src
 
 COPY hello.go .
 
-RUN go build -o hello .
+RUN go build -ldflags "-s -w" hello.go
+
 
 FROM scratch
 
